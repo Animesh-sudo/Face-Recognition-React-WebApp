@@ -43,7 +43,7 @@ class App extends Component {
   }
 
 componentDidMount(){
-  fetch('http://localhost:3000/')
+  fetch('https://nameless-garden-41548.herokuapp.com/')
     .then(response => response.json())
     .then(data => console.log(data))
 }
@@ -54,7 +54,7 @@ componentDidMount(){
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('http://localhost:3000/imageurl', {
+      fetch('https://nameless-garden-41548.herokuapp.com/imageurl', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -64,7 +64,7 @@ componentDidMount(){
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://nameless-garden-41548.herokuapp.com/image', {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
