@@ -43,7 +43,7 @@ class App extends Component {
   }
 
 componentDidMount(){
-  fetch('https://nameless-garden-41548.herokuapp.com/')
+  fetch('https://detectfacebackend.onrender.com/')
     .then(response => response.json())
     .then(data => console.log(data))
 }
@@ -54,7 +54,7 @@ componentDidMount(){
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('https://nameless-garden-41548.herokuapp.com/imageurl', {
+      fetch('https://detectfacebackend.onrender.com/imageurl', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -64,7 +64,7 @@ componentDidMount(){
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://nameless-garden-41548.herokuapp.com/image', {
+          fetch('https://detectfacebackend.onrender.com/image', {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
